@@ -11,3 +11,7 @@ gem "rackup", "~> 2.3"
 gem "sqlite3", "~> 2.9"
 
 gem "dotenv", "~> 3.2"
+
+gem 'rest-client'
+
+gem 'rufus-scheduler'

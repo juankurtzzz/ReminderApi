@@ -28,7 +28,7 @@ post '/contacts' do
     )
 
     {
-      message: 'Contact created'
+      message: 'Contato criado'
     }.to_json
 
   rescue StandardError => e

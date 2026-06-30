@@ -28,10 +28,10 @@ post '/reminders' do
   begin
     data = JSON.parse(request.body.read)
 
-    DB.execute(
-      "INSERT INTO reminders (contact_id, title, scheduled_at, description, status) VALUES (?, ?, ?, ?)",
-      [data['contact_id'], data['title'], data['scheduled_at']]
-    )
+DB.execute(
+  "INSERT INTO reminders (contact_id, title, scheduled_at, description) VALUES (?, ?, ?, ?)",
+  [data['contact_id'], data['title'], data['scheduled_at'], data['description']]
+)
 
     {
       message: 'Reminder created' 
@@ -41,6 +41,6 @@ post '/reminders' do
     {
       error: "Não foi possivel criar lembrete",
       details: e.message
-    }
+  }.to_json
   end
 end
